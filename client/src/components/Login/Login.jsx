@@ -25,7 +25,7 @@ export const Login = () => {
                 (u) => u.username === username && u.password === password
             );
             if (user) {
-                setNotification("Login successful!");
+                navigate("/home", { state: { user: user } });
             } else {
                 setNotification("Username or Password is incorrect");
             }

@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout/Layout";
 import { Footer } from "./components/Footer/Footer";
 import { Login } from "./components/Login/Login";
 import { SignUp } from "./components/SignUp/SignUp";
+import { Home } from "./components/Home/Home";
 
 const footerData = [
     { title: "Section 1", links: ["Link A", "Link B", "Link C"] },
@@ -17,6 +18,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/home" element={<Home />} />
             </Routes>
         </Layout>
     );
