@@ -1,0 +1,54 @@
+.footer {
+    margin-top: -10px;
+    width: 100%;
+    background: rgb(255, 210, 63);
+    box-sizing: border-box;
+    padding: 1rem 0;
+    border-top: 10px solid rgb(28, 173, 164);
+}
+
+.divider {
+    width: 90%;
+    margin: 0 auto 1rem;
+    border: none;
+    border-top: 2px solid rgb(28, 173, 164);
+}
+
+.logowrapper {
+    margin: -2.5rem 0 -1rem 4rem;
+}
+
+.cardwarslogo {
+    width: 200px;
+    height: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    column-gap: 2rem;
+    height: calc(100% - 1.5rem);
+}
+
+.panel {
+    width: 200px;
+    text-align: left;
+}
+
+.panel h4 {
+    margin: 0 0 0.5rem;
+}
+
+.panel ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.panel li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #007185;
+    cursor: pointer;
+}
