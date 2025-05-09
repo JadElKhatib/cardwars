@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Footer.module.css";
 import logo from "../../assets/cardwarslogo.png";
 
-export function Footer({ sections }) {
+export const Footer = ({ sections }) => {
     return (
         <div className={styles.footer}>
             <div className={styles.logowrapper}>

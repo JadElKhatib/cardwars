@@ -1,14 +1,14 @@
 require("dotenv").config();
 const express = require("express");
+const app = express();
+const database = require("./db/database");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
-const database = require("./db/database");
 
 BigInt.prototype.toJSON = function () {
     return this.toString();
 };
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
@@ -31,6 +31,43 @@ app.get("/users", async (req, res) => {
         return res.json(rows);
     } catch (err) {
         console.error(err);
+        return res.status(500).json({ error: err.message });
+    }
+});
+
+const path = require("path");
+app.use("/images", express.static(path.join(__dirname, "public/images")));
+
+app.get("/users/:userId/cards", async (req, res) => {
+    const userId = Number(req.params.userId);
+    if (!userId) {
+        return res.status(400).json({ error: "Invalid userId" });
+    }
+
+    try {
+        const sql = `
+        SELECT
+          c.card_id,
+          c.name,
+          c.rarity,
+          c.faction,
+          c.attack,
+          c.defense,
+          c.cost,
+          c.floop_cost,
+          c.floop_ability_info,
+          c.floop_ability_effect,
+          c.floop_ability_effect_value,
+          c.image_url,
+          pc.quantity
+        FROM player_cards pc
+        JOIN cards c ON pc.card_id = c.card_id
+        WHERE pc.user_id = ?
+      `;
+        const cards = await database.pool.query(sql, [userId]);
+        return res.json(cards);
+    } catch (err) {
+        console.error("Error loading user cards:", err);
         return res.status(500).json({ error: err.message });
     }
 });
