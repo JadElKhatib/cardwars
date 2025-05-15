@@ -5,6 +5,7 @@ import { Login } from "./components/Login/Login";
 import { SignUp } from "./components/SignUp/SignUp";
 import { Home } from "./components/Home/Home";
 import { CharacterSelect } from "./components/CharacterSelect/CharacterSelect";
+import { DeckSelect } from "./components/DeckSelect/DeckSelect";
 
 const footerData = [
     { title: "Section 1", links: ["Link A", "Link B", "Link C"] },
@@ -17,6 +18,7 @@ function App() {
     return (
         <Routes>
             <Route path="/home/characterselect" element={<CharacterSelect />}></Route>
+            <Route path="/home/deckselect" element={<DeckSelect />}></Route>
             <Route
                 element={<Layout footer={<Footer sections={footerData} />} />}
             >

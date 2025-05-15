@@ -119,7 +119,7 @@ export const CharacterSelect = () => {
                     onClick={() =>
                         navigate("/home/deckselect", {
                             state: {
-                                user,
+                                user: user,
                                 you: you,
                                 opponent: op
                             },
