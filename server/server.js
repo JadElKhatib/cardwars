@@ -72,6 +72,33 @@ app.get("/users/:userId/cards", async (req, res) => {
     }
 });
 
+app.get("/users/:userId/characters", async (req, res) => {
+    const userId = Number(req.params.userId);
+    if (!userId) return res.status(400).json({ error: "Invalid userId" });
+
+    try {
+        const sql = `
+       SELECT
+         c.character_id,
+         c.character_name,
+         c.turns,
+         c.ability_info,
+         c.ability_effect,
+         c.ability_value,
+         c.character_image_url
+       FROM user_characters uc
+       JOIN characters c
+         ON uc.character_id = c.character_id
+       WHERE uc.user_id = ?
+     `;
+        const rows = await database.pool.query(sql, [userId]);
+        return res.json(rows);
+    } catch (err) {
+        console.error("Error loading user characters:", err);
+        return res.status(500).json({ error: err.message });
+    }
+});
+
 app.post("/users", async (req, res) => {
     const { fullname, emailaddress, username, password } = req.body;
     if (!fullname || !emailaddress || !username || !password) {

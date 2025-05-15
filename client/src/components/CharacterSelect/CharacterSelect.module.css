@@ -1,0 +1,155 @@
+.picker {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+.panels {
+    display: flex;
+    flex: 1;
+    gap: 1rem;
+    padding: 0.5rem;
+    overflow: hidden;
+    background-image: url("../../assets/characterselectpage.jpg");
+    background-size: cover;
+}
+
+.panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+}
+
+.header {
+    flex: 0 0 auto;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: rgb(28, 173, 164);
+    border: 2px solid black;
+    width: 600px;
+}
+
+.picture {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 600px;
+}
+
+.picture img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.info {
+    flex: 0 0 auto;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    background-color: rgb(28, 173, 164);
+    border: 2px solid black;
+    width: 600px;
+}
+
+.selector {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: rgb(28, 173, 164);
+    border: 2px solid black;
+    border-top: 0px;
+    width: 600px;
+}
+
+.footer {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem;
+    background-color: rgb(255, 210, 63);
+}
+
+.name {
+    margin: 0 1rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    font-size: 30px;
+    pointer-events: none;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+.leftarrow {
+    width: 80px;
+    height: 50px;
+    pointer-events: all;
+    border-radius: 5px;
+}
+
+.leftarrow:hover {
+    opacity: 0.9;
+    border: 2px solid rgb(37, 236, 223);
+    border-radius: 7px;
+}
+
+.rightarrow {
+    width: 80px;
+    height: 50px;
+    pointer-events: all;
+    border-radius: 5px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.rightarrow:hover {
+    opacity: 0.9;
+    border: 2px solid rgb(37, 236, 223);
+    border-radius: 7px;
+}
+
+.minileftarrow {
+    width: 50px;
+    height: 30px;
+    pointer-events: all;
+    border-radius: 5px;
+}
+
+.minileftarrow:hover {
+    opacity: 0.9;
+    border: 2px solid rgb(37, 236, 223);
+    border-radius: 7px;
+}
+
+.minirightarrow {
+    width: 50px;
+    height: 30px;
+    pointer-events: all;
+    border-radius: 5px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.minirightarrow:hover {
+    opacity: 0.9;
+    border: 2px solid rgb(37, 236, 223);
+    border-radius: 7px;
+}

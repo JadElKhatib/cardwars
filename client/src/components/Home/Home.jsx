@@ -38,7 +38,7 @@ export const Home = () => {
             </header>
 
             <main className={styles.main}>
-                <div className={styles.bigCard}>Card Wars</div>
+                <div className={styles.bigCard} onClick={() => navigate("/home/characterselect", { state: { user: user } })}>Card Wars</div>
                 <div className={styles.sideCards}>
                     <div className={styles.smallCard} onClick={openCards}>
                         Cards
